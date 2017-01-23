@@ -1,0 +1,16 @@
+1<div *ngIf="item">
+    <h2>{{item.name}} details!</h2>
+    <div>
+        <label>id: </label>{{item.id}}</div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="item.name" placeholder="name" />
+    </div>
+    <div>
+        <label>description: </label>
+        <input [(ngModel)]="item.description" placeholder="description" />
+    </div>
+
+    <button (click)="goBack()">Back</button>
+    <button (click)="save()">Save</button>
+</div>

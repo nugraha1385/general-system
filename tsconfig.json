@@ -8,7 +8,8 @@
     "noImplicitAny": false,
     "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es5"
+    "target": "es5",
+    "allowJs": true
   },
   "exclude": [
     "node_modules/*",

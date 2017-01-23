@@ -12,6 +12,19 @@ export class InMemoryDataService {
       { id: 19, name: 'Magma' },
       { id: 20, name: 'Tornado' }
     ];
-    return { heroes };
+
+    let items = [
+      {id:'IT-001', name: 'Kasa Roll Besar ',description: 'Kassa Roll Besar 10cm' },
+      {id:'IT-002', name: 'Kasa Roll Sedang ',description: 'Kassa Roll Sedang 8cm' },
+      {id:'IT-003', name: 'Kasa Roll Kecil ',description: 'Kassa Roll Kecil 5cm' },
+      {id:'IT-004', name: 'Gunting Besar ',description: 'Gunting Besar' },
+      {id:'IT-005', name: 'Gunting Sedang ',description: 'Gunting Sedang' },
+      {id:'IT-006', name: 'Gunting Kecil ',description: 'Gunting Kecil' }
+    ];
+
+    return {
+      heroes,
+      items
+    };
   }
 }
