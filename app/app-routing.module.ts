@@ -4,6 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
+import { ItemDetailComponent } from './view/item-view/item-detail.component';
+
+
 
 const routes: Routes = [
   {
@@ -22,7 +25,12 @@ const routes: Routes = [
   {
     path: 'heroes',
     component: HeroesComponent
-  }
+  },
+
+    {
+        path: 'itemDetail',
+        component: ItemDetailComponent
+    }
 ];
 
 @NgModule({
@@ -31,4 +39,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routedComponents = [DashboardComponent, HeroesComponent, HeroDetailComponent];
+export const routedComponents = [DashboardComponent, HeroesComponent, HeroDetailComponent,ItemDetailComponent];
