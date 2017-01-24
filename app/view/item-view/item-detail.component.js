@@ -18,13 +18,33 @@ var ItemDetailComponent = (function () {
         this.itemService = itemService;
         this.close = new core_1.EventEmitter();
         this.navigated = false; // true if navigated here
-        this.item = itemService.getItem('1');
     }
     ItemDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
         console.log("On Init");
+        this.route.params.forEach(function (params) {
+            if (params['id'] !== undefined) {
+                var id = params['id'];
+                _this.navigated = true;
+                _this.itemService.getItem(id)
+                    .then(function (item) { return _this.item = item; });
+            }
+            else {
+                _this.navigated = false;
+                _this.item = new item_1.Item();
+            }
+        });
     };
     ItemDetailComponent.prototype.save = function () {
+        var _this = this;
         console.log("Save Item Detail");
+        this.itemService
+            .save(this.item)
+            .then(function (item) {
+            _this.item = item; // saved hero, w/ id if new
+            //this.goBack(item);
+        })
+            .catch(function (error) { return _this.error = error; }); // TODO: Display error message
     };
     ItemDetailComponent.prototype.goBack = function (savedItem) {
         if (savedItem === void 0) { savedItem = null; }

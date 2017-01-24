@@ -11,6 +11,16 @@
         <input [(ngModel)]="item.description" placeholder="description" />
     </div>
 
+  <div>
+    <label>unit: </label>
+    <input [(ngModel)]="item.unit" placeholder="unit" />
+  </div>
+
+  <div>
+    <label>rate: </label>
+    <input [(ngModel)]="item.rate" placeholder="rate" />
+  </div>
+
     <button (click)="goBack()">Back</button>
     <button (click)="save()">Save</button>
 </div>

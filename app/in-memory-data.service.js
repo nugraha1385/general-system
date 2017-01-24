@@ -16,12 +16,12 @@ var InMemoryDataService = (function () {
             { id: 20, name: 'Tornado' }
         ];
         var items = [
-            { id: 'IT-001', name: 'Kasa Roll Besar ', description: 'Kassa Roll Besar 10cm' },
-            { id: 'IT-002', name: 'Kasa Roll Sedang ', description: 'Kassa Roll Sedang 8cm' },
-            { id: 'IT-003', name: 'Kasa Roll Kecil ', description: 'Kassa Roll Kecil 5cm' },
-            { id: 'IT-004', name: 'Gunting Besar ', description: 'Gunting Besar' },
-            { id: 'IT-005', name: 'Gunting Sedang ', description: 'Gunting Sedang' },
-            { id: 'IT-006', name: 'Gunting Kecil ', description: 'Gunting Kecil' }
+            { id: 'IT-001', name: 'Kasa Roll Besar ', description: 'Kassa Roll Besar 10cm', unit: 'Roll', rate: 500 },
+            { id: 'IT-002', name: 'Kasa Roll Sedang ', description: 'Kassa Roll Sedang 8cm', unit: 'Roll', rate: 400 },
+            { id: 'IT-003', name: 'Kasa Roll Kecil ', description: 'Kassa Roll Kecil 5cm', unit: 'Roll', rate: 300 },
+            { id: 'IT-004', name: 'Gunting Besar ', description: 'Gunting Besar', unit: 'Buah', rate: 5000 },
+            { id: 'IT-005', name: 'Gunting Sedang ', description: 'Gunting Sedang', unit: 'Buah', rate: 4000 },
+            { id: 'IT-006', name: 'Gunting Kecil ', description: 'Gunting Kecil', unit: 'Buah', rate: 3000 }
         ];
         return {
             heroes: heroes,

@@ -15,6 +15,7 @@ require("./rxjs-extensions");
 var app_component_1 = require("./app.component");
 var app_routing_module_1 = require("./app-routing.module");
 var hero_service_1 = require("./hero.service");
+var item_service_1 = require("./services/item.service");
 var hero_search_component_1 = require("./hero-search.component");
 var AppModule = (function () {
     function AppModule() {
@@ -36,7 +37,8 @@ AppModule = __decorate([
             app_routing_module_1.routedComponents
         ],
         providers: [
-            hero_service_1.HeroService
+            hero_service_1.HeroService,
+            item_service_1.ItemService
         ],
         bootstrap: [app_component_1.AppComponent]
     })

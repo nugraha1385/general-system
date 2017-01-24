@@ -28,7 +28,7 @@ const routes: Routes = [
   },
 
     {
-        path: 'itemDetail',
+        path: 'itemDetail/:id',
         component: ItemDetailComponent
     }
 ];

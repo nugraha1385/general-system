@@ -4,6 +4,6 @@ export class Item {
     description:string;
     type: string;
     unit: string;
-    rate: string;
+    rate: number;
     tax: string;
 }

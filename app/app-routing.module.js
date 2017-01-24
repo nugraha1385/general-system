@@ -30,7 +30,7 @@ var routes = [
         component: heroes_component_1.HeroesComponent
     },
     {
-        path: 'itemDetail',
+        path: 'itemDetail/:id',
         component: item_detail_component_1.ItemDetailComponent
     }
 ];
