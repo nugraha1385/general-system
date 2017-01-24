@@ -28,9 +28,14 @@ const routes: Routes = [
   },
 
     {
-        path: 'itemDetail/:id',
-        component: ItemDetailComponent
+      path: 'itemDetail/:action/:id',
+      component: ItemDetailComponent
+    },
+    {
+      path: 'itemDetail/:action',
+      component: ItemDetailComponent
     }
+
 ];
 
 @NgModule({

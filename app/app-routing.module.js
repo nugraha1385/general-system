@@ -30,7 +30,11 @@ var routes = [
         component: heroes_component_1.HeroesComponent
     },
     {
-        path: 'itemDetail/:id',
+        path: 'itemDetail/:action/:id',
+        component: item_detail_component_1.ItemDetailComponent
+    },
+    {
+        path: 'itemDetail/:action',
         component: item_detail_component_1.ItemDetailComponent
     }
 ];

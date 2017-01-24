@@ -12,6 +12,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var item_service_1 = require("../../services/item.service");
 var item_1 = require("../../model/item");
+var constant_1 = require("../../utils/constant");
 var ItemDetailComponent = (function () {
     function ItemDetailComponent(route, itemService) {
         this.route = route;
@@ -21,17 +22,19 @@ var ItemDetailComponent = (function () {
     }
     ItemDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log("On Init");
         this.route.params.forEach(function (params) {
-            if (params['id'] !== undefined) {
-                var id = params['id'];
-                _this.navigated = true;
-                _this.itemService.getItem(id)
-                    .then(function (item) { return _this.item = item; });
-            }
-            else {
-                _this.navigated = false;
-                _this.item = new item_1.Item();
+            var action = params['action'];
+            var id = params['id'];
+            if (action !== undefined) {
+                if (action == constant_1.Constant.ACTION_ADD) {
+                    _this.navigated = false;
+                    _this.item = new item_1.Item();
+                }
+                else if (action == constant_1.Constant.ACTION_EDIT && id !== undefined) {
+                    _this.navigated = true;
+                    _this.itemService.getItem(id)
+                        .then(function (item) { return _this.item = item; });
+                }
             }
         });
     };

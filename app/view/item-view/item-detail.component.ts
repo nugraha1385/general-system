@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { ItemService } from '../../services/item.service';
 import { Item } from "../../model/item";
+import { Constant } from "../../utils/constant";
 
 
 
@@ -25,17 +26,20 @@ export class ItemDetailComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log("On Init");
         this.route.params.forEach((params: Params) => {
-          if (params['id'] !== undefined) {
+            let action = params['action'];
             let id = params['id'];
-            this.navigated = true;
-            this.itemService.getItem(id)
-              .then(item => this.item = item);
-          } else {
-            this.navigated = false;
-            this.item = new Item();
-          }
+
+            if(action !== undefined){
+                if(action == Constant.ACTION_ADD){
+                    this.navigated = false;
+                    this.item = new Item();
+                } else if (action == Constant.ACTION_EDIT && id !== undefined){
+                    this.navigated = true;
+                    this.itemService.getItem(id)
+                        .then(item => this.item = item);
+                }
+            }
         });
     }
 
