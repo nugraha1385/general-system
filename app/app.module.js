@@ -17,6 +17,7 @@ var app_routing_module_1 = require("./app-routing.module");
 var hero_service_1 = require("./hero.service");
 var item_service_1 = require("./services/item.service");
 var hero_search_component_1 = require("./hero-search.component");
+var item_search_component_1 = require("./view/item-view/item-search.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,7 +35,8 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent,
             hero_search_component_1.HeroSearchComponent,
-            app_routing_module_1.routedComponents
+            app_routing_module_1.routedComponents,
+            item_search_component_1.ItemSearchComponent
         ],
         providers: [
             hero_service_1.HeroService,

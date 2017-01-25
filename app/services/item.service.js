@@ -42,6 +42,15 @@ var ItemService = (function () {
             .toPromise()
             .catch(this.handleError);
     };
+    ItemService.prototype.search = function (term) {
+        return this.http
+            .get("app/items/?name=" + term)
+            .map(function (r) { return r.json().data; })
+            .catch(function (error) {
+            console.error('An friendly error occurred', error);
+            return Observable.throw(error.message || error);
+        });
+    };
     // Add new Item
     ItemService.prototype.post = function (item) {
         var headers = new http_1.Headers({

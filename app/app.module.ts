@@ -12,6 +12,7 @@ import { AppRoutingModule, routedComponents } from './app-routing.module';
 import { HeroService } from './hero.service';
 import { ItemService } from './services/item.service';
 import { HeroSearchComponent } from './hero-search.component';
+import { ItemSearchComponent } from './view/item-view/item-search.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { HeroSearchComponent } from './hero-search.component';
   declarations: [
     AppComponent,
     HeroSearchComponent,
-    routedComponents
+    routedComponents,
+    ItemSearchComponent
   ],
   providers: [
     HeroService,

@@ -44,6 +44,16 @@ export class ItemService {
       .catch(this.handleError);
   }
 
+  search(term: string): Observable<Item[]> {
+    return this.http
+      .get(`app/items/?name=${term}`)
+      .map((r: Response) => r.json().data as Item[])
+      .catch((error: any) => {
+        console.error('An friendly error occurred', error);
+        return Observable.throw(error.message || error);
+      });
+  }
+
   // Add new Item
   private post(item: Item): Promise<Item> {
     let headers = new Headers({
