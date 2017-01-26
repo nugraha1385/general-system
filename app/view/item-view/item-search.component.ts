@@ -24,6 +24,7 @@ import { Constant } from "../../utils/constant";
 
 export class ItemSearchComponent implements OnInit {
   items: Observable<Item[]>;
+  displayType : string;
   private searchTerms = new Subject<string>();
 
   constructor(
@@ -37,6 +38,7 @@ export class ItemSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.displayType = Constant.DISPLAY_TYPE_TABLE;
     this.items = this.searchTerms
       .debounceTime(300)        // wait for 300ms pause in events
       .distinctUntilChanged()   // ignore if next search term is same as previous
@@ -50,6 +52,10 @@ export class ItemSearchComponent implements OnInit {
         console.log(`Error in component ... ${error}`);
         return Observable.of<Item[]>([]);
       });
+  }
+
+  isDisplayTypeTable():boolean{
+    return !!(this.displayType === Constant.DISPLAY_TYPE_TABLE);
   }
 }
 
