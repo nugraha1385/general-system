@@ -29,7 +29,8 @@ export class ItemSearchComponent implements OnInit {
 
   constructor(
     private itemService: ItemService,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private router: Router) {
   }
 
   search(term: string): void {
@@ -53,6 +54,22 @@ export class ItemSearchComponent implements OnInit {
         return Observable.of<Item[]>([]);
       });
   }
+
+  gotoEditDetail(item: Item):void{
+    let link = ['/itemDetail/edit', item.id];
+    this.router.navigate(link);
+  }
+
+  gotoAddItem():void{
+    let link = ['/itemDetail/add'];
+    this.router.navigate(link);
+  }
+
+  gotoSearchItem():void{
+    let link = ['/itemSearch'];
+    this.router.navigate(link);
+  }
+
 
   isDisplayTypeTable():boolean{
     return !!(this.displayType === Constant.DISPLAY_TYPE_TABLE);

@@ -11,6 +11,7 @@ var dashboard_component_1 = require("./dashboard.component");
 var heroes_component_1 = require("./heroes.component");
 var hero_detail_component_1 = require("./hero-detail.component");
 var item_detail_component_1 = require("./view/item-view/item-detail.component");
+var item_search_component_1 = require("./view/item-view/item-search.component");
 var routes = [
     {
         path: '',
@@ -36,6 +37,10 @@ var routes = [
     {
         path: 'itemDetail/:action',
         component: item_detail_component_1.ItemDetailComponent
+    },
+    {
+        path: 'itemSearch',
+        component: item_search_component_1.ItemSearchComponent
     }
 ];
 var AppRoutingModule = (function () {
@@ -50,5 +55,7 @@ AppRoutingModule = __decorate([
     })
 ], AppRoutingModule);
 exports.AppRoutingModule = AppRoutingModule;
-exports.routedComponents = [dashboard_component_1.DashboardComponent, heroes_component_1.HeroesComponent, hero_detail_component_1.HeroDetailComponent, item_detail_component_1.ItemDetailComponent];
+exports.routedComponents = [dashboard_component_1.DashboardComponent, heroes_component_1.HeroesComponent, hero_detail_component_1.HeroDetailComponent,
+    item_detail_component_1.ItemDetailComponent,
+    item_search_component_1.ItemSearchComponent];
 //# sourceMappingURL=app-routing.module.js.map

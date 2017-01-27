@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { ItemDetailComponent } from './view/item-view/item-detail.component';
+import {ItemSearchComponent} from "./view/item-view/item-search.component";
 
 
 
@@ -34,6 +35,10 @@ const routes: Routes = [
     {
       path: 'itemDetail/:action',
       component: ItemDetailComponent
+    },
+    {
+      path: 'itemSearch',
+      component: ItemSearchComponent
     }
 
 ];
@@ -44,4 +49,6 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routedComponents = [DashboardComponent, HeroesComponent, HeroDetailComponent,ItemDetailComponent];
+export const routedComponents = [DashboardComponent, HeroesComponent, HeroDetailComponent,
+  ItemDetailComponent,
+  ItemSearchComponent];
